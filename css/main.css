@@ -1,0 +1,29 @@
+html
+{
+    background-image:url(https://i.pinimg.com/originals/c0/65/3c/c0653c9d8763cf157921b6cfd80c2b3a.png);
+    background-repeat: no-repeat;/*  устанавливает режим повторения фонового изображения по всей поверхности элемента. */
+    background-position: center center;
+    background-attachment: fixed; /**/
+    -webkit-backdrop-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover; 
+    background-size: cover; /*устанавливает размер фонового изображения*/
+    filter: brightness(17%); /*Затемнение фона(больше 100 = больше яркости)*/
+    color: #333;
+    background-repeat: no-repeat;/*  устанавливает режим повторения фонового изображения по всей поверхности элемента. */
+    background-position: center center;
+    background-attachment: fixed; /**/
+   -webkit-backdrop-size: cover;
+   -moz-background-size: cover;
+ -o-background-size: cover; 
+ background-size: cover; /*устанавливает размер фонового изображения*/
+  filter: brightness(17%); /*Затемнение фона(больше 100 = больше яркости)*/
+}
+.ava{
+    background-color: #fff;
+    vertical-align: middle; /*  выравнивает текстовые элементы по вертикали относительно друг друга */
+    width: 220px; /* ширина */
+    height: 220px; /* высота */
+    border-radius: 50%; /* это CSS-свойство, которое позволяет разработчикам определять, как скругляются границы блока */
+}
+
