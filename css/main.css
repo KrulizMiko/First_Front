@@ -1,29 +1,144 @@
-html
-{
-    background-image:url(https://i.pinimg.com/originals/c0/65/3c/c0653c9d8763cf157921b6cfd80c2b3a.png);
-    background-repeat: no-repeat;/*  устанавливает режим повторения фонового изображения по всей поверхности элемента. */
-    background-position: center center;
-    background-attachment: fixed; /**/
-    -webkit-backdrop-size: cover;
-    -moz-background-size: cover;
-    -o-background-size: cover; 
-    background-size: cover; /*устанавливает размер фонового изображения*/
-    filter: brightness(17%); /*Затемнение фона(больше 100 = больше яркости)*/
-    color: #333;
-    background-repeat: no-repeat;/*  устанавливает режим повторения фонового изображения по всей поверхности элемента. */
-    background-position: center center;
-    background-attachment: fixed; /**/
-   -webkit-backdrop-size: cover;
-   -moz-background-size: cover;
- -o-background-size: cover; 
- background-size: cover; /*устанавливает размер фонового изображения*/
-  filter: brightness(17%); /*Затемнение фона(больше 100 = больше яркости)*/
+
+* {
+    margin: 0;
+    padding: 0;
 }
-.ava{
-    background-color: #fff;
-    vertical-align: middle; /*  выравнивает текстовые элементы по вертикали относительно друг друга */
-    width: 220px; /* ширина */
-    height: 220px; /* высота */
-    border-radius: 50%; /* это CSS-свойство, которое позволяет разработчикам определять, как скругляются границы блока */
+
+@font-face {
+    font-family: 'Itim-Regular';
+    src: url("../fonts/Itim-Regular.ttf");
+}
+
+body {
+
+    font-family: 'Itim-Regular', sans-serif;
+    color: white;
+}
+
+.main {
+    display: flex; /* Используем flexbox для выравнивания */
+    justify-content: center; /* Центрируем содержимое по горизонтали */
+    align-items: center; /* Центрируем содержимое по вертикали */
+    height: 100vh; /* Высота на весь экран */
+    position: relative; /* Для позиционирования дочерних элементов */
+}
+
+.mainImage {
+    position: absolute; /* Фоновое изображение будет абсолютным */
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 1; /* Устанавливаем z-index для фона */
+}
+
+.mainImage img {
+    width: 100%; /* Изображение занимает всю ширину контейнера */
+    height: 100%; /* Изображение занимает всю высоту контейнера */
+    object-fit: cover; /* Масштабируем изображение с сохранением пропорций */
+
+}
+
+.main::before { /* Используется для создания полупрозрачного черного слоя (rgba(0, 0, 0, 0.8)) поверх фонового изображения.*/
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.8); /* Полупрозрачный черный цвет для затемнения фона */
+    z-index: 2; /* Устанавливаем z-index выше фона изображения */
+}
+
+.avaPosition {
+    position: relative; /* Позволяет правильно позиционировать аватарку */
+    z-index: 2; /* Устанавливаем z-index выше фона */
+    height: 850px;
+    left: 180px;
+    text-align: center;
+    margin-bottom: 25px;
+}
+
+.avatarFrame {
+    width: 146px;
+    height: 146px;
+    border: 7px solid #AC8A7E;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden
+}
+
+.avatar {
+    width: 100%; /* Изображение занимает всю ширину контейнера аватара */
+    height: auto; /* Автоматическая высота для сохранения пропорций */
+    border-radius: 50%; /* Округление углов изображения */
+}
+
+.nickname {
+    font-size: 32px;
+    color: white;
+}
+
+.buttonContainer {
+    position: relative; /* Позволяет правильно позиционировать аватарку */
+    z-index: 2; /* Устанавливаем z-index выше фона */
+    height: 380px;
+    left: -70px;
+    text-align: center;
+    margin-top: 25px; /* Отступ сверху для размещения блока кнопок ниже аватара и никнейма */
+}
+
+.button {
+    display: inline-block; /* Кнопки будут отображаться в строку */
+    padding: 25px 35px; /* Внутренние отступы кнопки */
+    margin: 5px; /* Отступ между кнопками */
+    background-color: transparent; /* Прозрачный фон кнопки */
+    color: white; /* Цвет текста кнопки */
+    text-decoration: none; /* Убираем подчеркивание у ссылки */
+    border-radius: 5px; /* Закругление углов кнопки */
+    border: 2px solid white; /* Белая граница вокруг кнопки */
+    transition: background-color 0.3s ease, color 0.3s ease; /* Плавный переход цвета фона и текста при наведении */
+    font-size: 20px;
+
+
+}
+
+.button:hover {
+    background-color: white; /* Цвет фона при наведении на кнопку */
+    color: #282c34; /* Цвет текста при наведении на кнопку */
+}
+
+/*.input-field {
+    margin-top: 15px;
+    padding: 10px;
+    width: 80%;
+    max-width: 400px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    font-size: 16px;
+}  оставлю до следующего комита(устал) */
+
+
+
+/* Эффект накопления снега */
+.snowOnClick:before {
+    content: '';
+    position: absolute;
+    top: -10px;
+    left: 0;
+    right: 0;
+    height: 10px; /* Высота слоя снега */
+    background-color: rgba(255, 255, 255, 0.7); /* Полупрозрачный белый цвет */
+    border-radius: 5px;
+    transform: translateY(-100%);
+    animation: fall 1s forwards;
+}
+
+@keyframes fall {
+    to {
+        transform: translateY(0); /* Перемещение слоя снега вниз */
+    }
 }
 

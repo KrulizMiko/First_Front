@@ -1,24 +1,68 @@
-<!DOCTYPE html>	
-<html>  
-    <body> 
-  <div class="wrapper">  
-    <head>  
-        <meta charset="utf-8" />
-        <link rel="stylesheet" href="css/main.css">
-        <script src="js/app.js" defer>  </script>
-        <script> document.write("джс, это ты ?")</script>
-        <title>Switcher</title>
-   
-       
-    </head>
-    <img src="https://ami.animecharactersdatabase.com/uploads/chars/36226-1682355687.png" alt="Avatar" class="ava">
-    
-   
-    
+<!DOCTYPE html>
+<html lang="en">
 
+<head>
+    <meta charset="UTF-8">
+    <title>Switcher</title>
+    <link rel="stylesheet" href="css/main.css">
+    <link href="https://cdn.jsdelivr.net/gh/Alaev-Co/snowflakes/dist/snow.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/gh/Alaev-Co/snowflakes/dist/Snow.min.js"></script>
+    <script>
+        new Snow ();
+    </script>
+</head>
 
+<body>
 
+<main class="main">
 
+    <div class="mainImage">
+        <img src="images/mainBackrd.png" alt="Background">
+    </div>
+
+    <div class="avaPosition">
+        <div class="avatarFrame">
+            <img src="images/avatar.jpg" alt="Avatar" class="avatar"> <!-- Путь к изображению аватарки -->
         </div>
-    </body>
+        <div class="nickname">KrulizMiko</div>
+    </div>
+
+    <div class="buttonContainer">
+        <a href="https://vk.com/krulizmiko" target="_blank" class="button">VK</a>
+        <a href="https://github.com/KrulizMiko" target="_blank" class="button">GitHub</a>
+        <a href="https://tiktok.com" target="_blank" class="button">TikTok</a>
+        <a href="https://www.hoyolab.com/accountCenter/postList?id=300969270" target="_blank" class="button">Hoyolab</a>
+        <a href="https://youtube.com" target="_blank" class="button">YouTube</a>
+        <a href="https://twitch.tv" target="_blank" class="button">Twitch</a>
+        <a href="https://t.me" target="_blank" class="button">Telegram</a>
+        <button id="questionButton" class="button">Do you have any questions?</button>
+        <!-- <div id="questionForm" class="hidden">
+            <input type="text" id="name" class="input-field" placeholder="Your Name" required>
+            <textarea id="message" class="input-field" placeholder="Your Message" maxlength="1000" rows="4"></textarea>
+          оставлю до следующего комита(устал)  -->
+        </div>
+    </div>
+
+    <script>
+        // Инициализация эффекта снега
+        new Snow({
+            // Настройте параметры здесь, если необходимо
+            minSize: 2, // Минимальный размер снежинок
+            maxSize: 7, // Максимальный размер снежинок
+            // Параметр для определения числа снежинок
+            snowCount: 100
+        });
+
+        // Обработчик события для добавления снежного эффекта на кнопки
+        document.querySelectorAll('.buttonContainer .button').forEach(button => {
+            button.addEventListener('click', (e) => {
+                e.target.classList.toggle('snowOnClick');
+            });
+        });
+    </script>
+
+    <script src="js/app.js"></script> <!-- Подключаем JavaScript -->
+</main>
+
+</body>
 </html>
